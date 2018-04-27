@@ -1,0 +1,16 @@
+  <h1>Dojo Activity Center</h1>
+    <a asp-controller="Activity" asp-action="Dashboard">Dashboard</a>
+     <a href="/">Log Off</a>
+     <hr>
+
+<h2>@ViewBag.singleActivity.Title</h2>
+
+<h3>Event Coordinator:</h3>
+<h4>@ViewBag.singleActivity.User.FirstName @ViewBag.singleActivity.User.LastName</h4>
+
+<h2>Description:</h2>
+<h4>@ViewBag.singleActivity.description</h4>
+<h2>Participants:</h2>
+@foreach(var guest in @ViewBag.singleActivity.joiners){
+<h5>@guest.User.FirstName</h5>
+}

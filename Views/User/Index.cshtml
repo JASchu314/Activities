@@ -1,0 +1,30 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+@model retake.Models.UserViewModel
+
+ 
+<div asp-validation-summary="All"></div>
+@if(TempData["error"] != null){
+    <p>@TempData["error"]</p>
+}
+<div class="form-group">
+<fieldset>
+    <legend><h2>Registration</h2></legend>
+    <form asp-controller="User" asp-action="addUser" method="post">
+    <label asp-for="FirstName"></label>
+    <input class ="form-control"asp-for="FirstName"/><br>
+     <label asp-for="LastName"></label>
+    <input class ="form-control"asp-for="LastName"/><br>
+    <label asp-for="Email"></label>
+    <input class="form-control" asp-for="Email"/><br>
+    <label asp-for="Password"></label>
+    <input class="form-control" asp-for="Password"/><br>
+    <label asp-for="PasswordCheck"></label>
+    <input class="form-control" asp-for="PasswordCheck"/><br>
+    <button type="submit" class="btn btn-primary">Create new User</button>
+</form>
+</fieldset>
+</div>
+@Html.Partial("login")

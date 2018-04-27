@@ -1,0 +1,18 @@
+@model retake.Models.loginViewModel
+<div class="form-group">
+<fieldset>
+   <span asp-validation-for="Email"></span><br>
+   <span asp-validation-for="Password"></span>
+   @if(TempData["error"] != null){
+    <p>@TempData["error"]</p>
+}
+    <legend><h2>Log In</h2></legend>
+    <form asp-action="Login">
+    <label asp-for="Email"></label>
+    <input class ="form-control" asp-for="Email"/><br>
+    <label asp-for="Password"></label>
+    <input class ="form-control" asp-for="Password"/><br>
+    <button type="submit" class="btn btn-primary">Login</button>
+</form>
+</fieldset>
+</div>
